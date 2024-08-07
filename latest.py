@@ -6,7 +6,8 @@ def update_script():
     try:
         response = requests.get(url, verify=True)
         response.raise_for_status()
-        if open(f"{os.getcwd()}\\asdwasd.py","r") == response.text:
+        currentFile = open(f"{os.getcwd()}\\asdwasd.py","r").read()
+        if currentFile == response.text:
             os.remove("updated_script.py")
             print("Removed old file")
         else:
