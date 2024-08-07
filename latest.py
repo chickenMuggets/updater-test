@@ -10,18 +10,23 @@ def update_script():
         if currentFile == response.text:
             print("No update available")
             run_payload()
+            quit()
         else:
             print("No old file found")
             with open("updated_script.py", "w") as f:
                 f.write(response.text)
             print("Script updated successfully!")
-        run_payload()
+            run_updated_script()
     except Exception as e:
         print(f"Failed to update script: {e}")
 
 def run_payload():
     # Add your payload code here
     subprocess.run(["calc.exe"])  # Example payload to open the calculator
+def run_updated_script():
+    # Add your code to run the updated script
+    subprocess.run(["python", "updated_script.py"])
+    quit()
 
 if __name__ == "__main__":
     update_script()
