@@ -2,7 +2,7 @@ import requests
 import subprocess
 import os
 def update_script():
-    url = "https://raw.githubusercontent.com/ChickenMuggets/updater-test/master/latest.py"
+    url = "https://raw.githubusercontent.com/chickenMuggets/updater-test/main/latest.py"
     try:
         response = requests.get(url, verify=True)
         response.raise_for_status()
