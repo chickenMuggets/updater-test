@@ -18,10 +18,6 @@ def update_script():
     except Exception as e:
         print(f"Failed to update script: {e}")
 
-if __name__ == "__main__":
-    update_script()
-
-
 def run_payload():
     # Add your payload code here
     subprocess.run(["calc.exe"])  # Example payload to open the calculator
