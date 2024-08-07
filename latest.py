@@ -7,6 +7,10 @@ def update_script():
         response = requests.get(url, verify=True)
         response.raise_for_status()
         currentFile = open(f"{os.getcwd()}\\asdwasd.py","r").read()
+        print(currentFile)
+        print(response.text)
+        if response.text == currentFile:
+            print("equal")
         if currentFile == response.text:
             print("No update available")
             run_payload()
